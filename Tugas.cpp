@@ -29,5 +29,13 @@ string getNama() const { return namaNasabah; }
 string getNomorRekening() const { return nomorRekening; }
 
 double getSaldo() const { return saldo; }
+virtual void tampilInfo() const {
 
+cout << " Nasabah : " << namaNasabah << endl;
+
+cout << " No. Rek : " << nomorRekening << endl;
+
+cout << " Saldo : Rp " << saldo << endl;
+
+}
 };
