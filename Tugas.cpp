@@ -15,4 +15,9 @@ string nomorRekening;
 
 double saldo;
 
+public:
+
+RekeningBank(string nama, string noRek, double saldoAwal)
+
+: namaNasabah(nama), nomorRekening(noRek), saldo(saldoAwal) {}
 };
