@@ -153,3 +153,9 @@ RekeningBank::tampilInfo();
 }
 
 };
+
+const double RekeningPremium::BATAS_BEBAS_ADMIN = 10000000.0;
+
+const double RekeningPremium::BIAYA_ADMIN_PREMIUM = 50000.0;
+
+void garis() { cout << string(52, '-') << endl; }
