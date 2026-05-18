@@ -57,4 +57,11 @@ cout << " [Syariah] Tidak ada potongan admin (prinsip syariah)." << endl;
 
 }
 
+void tampilInfo() const override {
+
+cout << " Jenis : Rekening Syariah" << endl;
+
+RekeningBank::tampilInfo();
+
+}
 };
