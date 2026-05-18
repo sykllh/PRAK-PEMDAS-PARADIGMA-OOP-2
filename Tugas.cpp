@@ -65,3 +65,45 @@ RekeningBank::tampilInfo();
 
 }
 };
+
+class RekeningKonvensional : public RekeningBank {
+
+private:
+
+static const double BIAYA_ADMIN;
+
+
+
+public:
+
+RekeningKonvensional(string nama, string noRek, double saldoAwal)
+
+: RekeningBank(nama, noRek, saldoAwal) {}
+
+void potongAdmin() override {
+
+if (saldo >= BIAYA_ADMIN) {
+
+saldo -= BIAYA_ADMIN;
+
+cout << " [Konvensional] Biaya admin Rp " << BIAYA_ADMIN
+
+<< " berhasil dipotong." << endl;
+
+} else {
+
+cout << " [Konvensional] Saldo tidak cukup untuk biaya admin!" << endl;
+
+}
+
+}
+
+void tampilInfo() const override {
+
+cout << " Jenis : Rekening Konvensional" << endl;
+
+RekeningBank::tampilInfo();
+
+}
+
+};
