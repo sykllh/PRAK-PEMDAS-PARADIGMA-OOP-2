@@ -109,3 +109,47 @@ RekeningBank::tampilInfo();
 };
 
 const double RekeningKonvensional::BIAYA_ADMIN = 15000.0;
+
+class RekeningPremium : public RekeningBank {
+
+private:
+
+static const double BATAS_BEBAS_ADMIN;
+
+static const double BIAYA_ADMIN_PREMIUM;
+
+public:
+
+RekeningPremium(string nama, string noRek, double saldoAwal)
+
+: RekeningBank(nama, noRek, saldoAwal) {}
+
+void potongAdmin() override {
+
+if (saldo > BATAS_BEBAS_ADMIN) {
+
+cout << " [Premium] Saldo di atas Rp " << BATAS_BEBAS_ADMIN
+
+<< ", bebas biaya admin." << endl;
+
+} else {
+
+saldo -= BIAYA_ADMIN_PREMIUM;
+
+cout << " [Premium] Saldo <= Rp " << BATAS_BEBAS_ADMIN
+
+<< ", biaya admin Rp " << BIAYA_ADMIN_PREMIUM << " dipotong." << endl;
+
+}
+
+}
+
+void tampilInfo() const override {
+
+cout << " Jenis : Rekening Premium" << endl;
+
+RekeningBank::tampilInfo();
+
+}
+
+};
