@@ -16,5 +16,8 @@ public:
         cout << "x = " << x << endl;
         cout << "y = " << y << endl;
     }
+};
 
+int main() {
+    
 }
