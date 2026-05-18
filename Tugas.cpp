@@ -159,3 +159,67 @@ const double RekeningPremium::BATAS_BEBAS_ADMIN = 10000000.0;
 const double RekeningPremium::BIAYA_ADMIN_PREMIUM = 50000.0;
 
 void garis() { cout << string(52, '-') << endl; }
+
+int main() {
+
+cout << fixed << setprecision(0);
+
+cout << endl;
+
+cout << " ==========================================" << endl;
+
+cout << " BANK GIBRAN JAYA " << endl;
+
+cout << " Proses Biaya Admin Akhir Bulan " << endl;
+
+cout << " ==========================================" << endl;
+
+cout << endl;
+
+vector<RekeningBank*> daftarRekening;
+
+daftarRekening.push_back(new RekeningSyariah( "Ahmad Fauzi", "SYR-001", 5000000.0));
+
+daftarRekening.push_back(new RekeningKonvensional("Budi Santoso", "KON-002", 2500000.0));
+
+daftarRekening.push_back(new RekeningKonvensional("Citra Dewi", "KON-003", 10000.0));
+
+daftarRekening.push_back(new RekeningPremium( "Diana Pratiwi", "PRM-004", 15000000.0));
+
+daftarRekening.push_back(new RekeningPremium( "Eko Wahyudi", "PRM-005", 8000000.0));
+
+cout << " === SALDO SEBELUM PROSES ===" << endl << endl;
+
+for (RekeningBank* rek : daftarRekening) { garis(); rek->tampilInfo(); }
+
+garis();
+
+cout << endl << " === PROSES POTONGAN ADMIN ===" << endl << endl;
+
+for (RekeningBank* rek : daftarRekening) {
+
+garis();
+
+cout << " Memproses : " << rek->getNama() << endl;
+
+rek->potongAdmin();
+
+}
+
+garis();
+
+cout << endl << " === SALDO SESUDAH PROSES ===" << endl << endl;
+
+for (RekeningBank* rek : daftarRekening) { garis(); rek->tampilInfo(); }
+
+garis();
+
+for (RekeningBank* rek : daftarRekening) delete rek;
+
+cout << endl << " Proses akhir bulan selesai." << endl;
+
+cout << " ==========================================" << endl << endl;
+
+return 0;
+
+}
