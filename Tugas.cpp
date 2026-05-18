@@ -4,3 +4,15 @@
 #include <vector>
 
 using namespace std;
+
+class RekeningBank {
+
+protected:
+
+string namaNasabah;
+
+string nomorRekening;
+
+double saldo;
+
+};
