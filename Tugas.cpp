@@ -39,3 +39,22 @@ cout << " Saldo : Rp " << saldo << endl;
 
 }
 };
+
+
+class RekeningSyariah : public RekeningBank {
+
+public:
+
+RekeningSyariah(string nama, string noRek, double saldoAwal)
+
+: RekeningBank(nama, noRek, saldoAwal) {}
+
+
+
+void potongAdmin() override {
+
+cout << " [Syariah] Tidak ada potongan admin (prinsip syariah)." << endl;
+
+}
+
+};
