@@ -107,3 +107,5 @@ RekeningBank::tampilInfo();
 }
 
 };
+
+const double RekeningKonvensional::BIAYA_ADMIN = 15000.0;
